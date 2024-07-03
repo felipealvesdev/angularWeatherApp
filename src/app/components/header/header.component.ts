@@ -24,6 +24,9 @@ export class HeaderComponent {
   }
 
   getHoursAndMinutes() {
+    if(this.getDateMinutes() < 10) {
+      return `${this.getDateHours()}:0${this.getDateMinutes()}`
+    }
     return `${this.getDateHours()}:${this.getDateMinutes()}`;
   }
 

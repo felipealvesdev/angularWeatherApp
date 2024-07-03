@@ -1,10 +1,14 @@
 <div class="container">
-  <h1>Seja bem-vindo</h1>
+  <h1>Welcome to this app!</h1>
   <div class="seachContainer">
-    <input placeholder="Digite a cidade" [(ngModel)]="inputValue"/>
-    <button (click)="handleSearch()">Pesquisar</button>
-    </div>
+    <input placeholder="Type a city name" [(ngModel)]="inputValue"/>
+    <button (click)="handleSearch()">Search</button>
+  </div>
 
-    <h1 *ngIf="weatherData">{{weatherData.name}}</h1>
-    <h2 *ngIf="weatherData">{{getTemperatureCelsius()}}ºC</h2>
+  <div *ngIf="weatherData" class="showingDataContainer">
+    <h1 class="cityName">{{weatherData.name}}</h1>
+    <h2 class="temperatureNow">{{getTemperatureCelsius()}}ºC</h2>
+    <h2 class="weatherDescription">{{weatherData.weather[0].main}}</h2>
+    <h2 class="weatherDescription">{{weatherData.weather[0].description}}</h2>
+  </div>
 </div>
