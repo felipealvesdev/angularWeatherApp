@@ -24,15 +24,18 @@
 
     & .cityName {
       font-size: 4rem;
+      color: rgb(117, 43, 0);
     }
 
     & .temperatureNow {
       font-size: 8rem;
+      color: #fff;
     }
 
     & .weatherDescription {
       font-size: 3rem;
       text-transform: capitalize;
+      color: rgb(117, 43, 0);
     }
 
   }
