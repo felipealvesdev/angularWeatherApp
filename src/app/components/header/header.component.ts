@@ -8,5 +8,29 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  date = new Date;
+  private timer: any;
 
+  ngOnInit(): void {
+    this.timer = setInterval(()=> {
+      this.date = new Date();
+    }, 1000);
+  }
+
+  ngOnDestroy(): void {
+   if(this.timer) {
+    clearInterval(this.timer);
+   }
+  }
+
+  getHoursAndMinutes() {
+    return `${this.getDateHours()}:${this.getDateMinutes()}`;
+  }
+
+  getDateHours() {
+    return this.date.getHours();
+  }
+  getDateMinutes() {
+    return this.date.getMinutes();
+  }
 }
